@@ -1,12 +1,51 @@
-import { Component } from '@angular/core';
+import { OpenedSheltersService } from './../service/shelters/opened-shelters.service';
+import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Shelters } from '../shelters';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
 
-  constructor() {}
+  constructor(public openedSheltersService: OpenedSheltersService,
+              public loadingController: LoadingController,
+              public router: Router,
+              public route: ActivatedRoute) { }
 
+  shelters: Shelters[] = [];
+
+  async getShelters() {
+  const loading = await this.loadingController.create({
+    message: 'Loading...'
+  });
+  await loading.present();
+  await this.openedSheltersService.getShelters()
+    .subscribe(res => {
+      this.shelters = res;
+      console.log(this.shelters);
+      loading.dismiss();
+    }, err => {
+      console.log(err);
+      loading.dismiss();
+    });
+}
+
+  // ionViewDidEnter() {
+  //   this.openedSheltersService.getAll().subscribe((data) => {
+  //     console.log(data);
+  //     // this.shelters = data['shelters'];
+  //   });
+  // }
+
+  ngOnInit(){
+    this.getShelters();
+  }
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.shelters, event.previousIndex, event.currentIndex);
+  }
 }

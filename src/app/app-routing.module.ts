@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'tab5',
     loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule)
+  },
+  {
+    path: 'openedshelters-detail/:shelters',
+    loadChildren: () => import('./openedshelters-detail/openedshelters-detail.module').then( m => m.OpenedsheltersDetailPageModule)
   }
 ];
 @NgModule({
@@ -21,4 +25,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}

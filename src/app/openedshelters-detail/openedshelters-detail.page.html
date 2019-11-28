@@ -1,0 +1,32 @@
+<ion-header>
+ <ion-toolbar color="primary">
+   <ion-buttons slot="start">
+     <ion-back-button defaultHref="/tab2"></ion-back-button>
+   </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content fullscreen class="ion-padding">
+  <div class = "ion-padding"></div>
+  <div class = "ion-padding"></div>
+  <ion-list-header>Detailed Opened Shelters</ion-list-header>
+  <div class = "ion-padding"></div>
+  <div class = "ion-padding"></div>
+  <div class = "ion-padding"></div>
+
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle><p>Current URL: {{currentURL}}</p></ion-card-subtitle>
+      <ion-card-title>{{ f101shelterid }}</ion-card-title>
+    </ion-card-header>
+    <!-- <ion-card-content>
+        {{shelters.daerah}}
+        {{shelters.f101bukapada}}
+        {{shelters.jumlahkeluarga}}
+        {{shelters.f101jumlahmangsa}}<
+    </ion-card-content> -->
+  </ion-card>
+  shelter : {{f101sheltername}}
+</ion-content>
