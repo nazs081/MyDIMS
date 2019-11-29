@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Shelters } from '../shelters';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-tab2',
@@ -35,17 +34,8 @@ export class Tab2Page implements OnInit {
     });
 }
 
-  // ionViewDidEnter() {
-  //   this.openedSheltersService.getAll().subscribe((data) => {
-  //     console.log(data);
-  //     // this.shelters = data['shelters'];
-  //   });
-  // }
-
   ngOnInit(){
     this.getShelters();
   }
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.shelters, event.previousIndex, event.currentIndex);
-  }
+
 }
