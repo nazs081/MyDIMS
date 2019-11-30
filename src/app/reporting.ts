@@ -1,3 +1,4 @@
 export class Reporting {
-  reporting = [];
+  idLaporan: number;
+  title: string;
 }

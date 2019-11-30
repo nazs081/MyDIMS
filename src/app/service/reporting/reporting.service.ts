@@ -26,7 +26,7 @@ export class ReportingService {
     };
   }
 
-  getReporting(): Observable<Reporting[]> {
+  getReporting(): Observable<any> {
   return this.http.get<Reporting[]>(apiUrl, httpOptions)
     .pipe(
       tap(reporting => console.log('fetched reporting list')),

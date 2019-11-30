@@ -34,7 +34,7 @@ export class OpenedSheltersService {
     );
   }
 
-    getShelter(id: any): Observable<Shelters> {
+    getShelter(id: any): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.get<Shelters>(url,httpOptions).pipe(
       tap(_ => console.log(`fetched Shelter id=${id}`)),

@@ -2,7 +2,7 @@ import { ReportingService } from './../service/reporting/reporting.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Reporting } from '../reporting';
+// import { Reporting } from '../reporting';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
@@ -43,8 +43,9 @@ export class Tab4Page implements OnInit {
   launchURL(link)
   {
 
-    this.url = `https://mydims.nadma.gov.my/Modules/Reports/LaporanTerkini/publicview.php?idLaporan=${link}`;
-    this.iab.create(this.url,'_system','location=yes');
+    this.url = `https://mydims.nadma.gov.my/Modules/Reports/LaporanTerkini/publicview.php?idLaporan=${link}&type=pdf`;
+    console.log(this.url);
+    this.iab.create(this.url,'_system','location=no');
   }
 
 }
