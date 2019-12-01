@@ -2,6 +2,7 @@ import { OpenedSheltersService } from './../service/shelters/opened-shelters.ser
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { Shelters } from '../shelters';
 
 @Component({
@@ -13,8 +14,7 @@ export class Tab2Page implements OnInit {
 
   constructor(public openedSheltersService: OpenedSheltersService,
               public loadingController: LoadingController,
-              public router: Router,
-              public route: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute) { }
 
   shelters: Shelters[] = [];
 

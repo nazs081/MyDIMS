@@ -42,29 +42,4 @@ export class OpenedSheltersService {
     );
   }
 
-  // addProduct(product: Product): Observable<Product> {
-  //   return this.http.post<Product>(apiUrl, product, httpOptions).pipe(
-  //     tap((prod: Product) => console.log(`added product w/ id=${prod._id}`)),
-  //     catchError(this.handleError<Product>('addProduct'))
-  //   );
-  // }
-  //
-  // updateProduct(id: any, product: any): Observable<any> {
-  //   const url = `${apiUrl}/${id}`;
-  //   return this.http.put(url, product, httpOptions).pipe(
-  //     tap(_ => console.log(`updated product id=${id}`)),
-  //     catchError(this.handleError<any>('updateProduct'))
-  //   );
-  // }
-  //
-  // deleteProduct(id: any): Observable<Product> {
-  //   const url = `${apiUrl}/${id}`;
-  //
-  //   return this.http.delete<Product>(url, httpOptions).pipe(
-  //     tap(_ => console.log(`deleted product id=${id}`)),
-  //     catchError(this.handleError<Product>('deleteProduct'))
-  //   );
-  // }
-
-
 }

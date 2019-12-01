@@ -1,0 +1,38 @@
+<ion-content fullscreen class="ion-padding">
+    <ion-list-header>PERINCIAN HEBAHAN</ion-list-header>
+
+    <ion-card lines="full" class="ion-margin ion-padding">
+      <ion-item class="item-padding">
+        <ion-label class="my-label" position="stacked">TAJUK HEBAHAN</ion-label>
+        <ion-input>{{notify.f110title}}</ion-input>
+      </ion-item>
+
+      <ion-item class="item-padding">
+        <ion-label class="my-label" position="stacked">HURAIAN HEBAHAN</ion-label>
+        <ion-input>{{notify.f110broadcasttext}}</ion-input>
+      </ion-item>
+
+      <ion-item class="item-padding">
+        <ion-label class="my-label" position="stacked">HEBAHAN OLEH</ion-label>
+        <ion-input>{{notify.f110createdon}}</ion-input>
+      </ion-item>
+
+      <ion-item class="item-padding">
+        <ion-label class="my-label" position="stacked">TARIKH HEBAHAN</ion-label>
+        <ion-input>{{notify.f110createdby}}</ion-input>
+      </ion-item>
+
+      <ion-item class="item-padding">
+        <ion-label class="my-label" position="stacked">DIKEMASKINI OLEH</ion-label>
+        <ion-input>{{notify.f110lastupdatedon}}</ion-input>
+      </ion-item>
+
+      <ion-item class="item-padding">
+        <ion-label class="my-label" position="stacked">TARIKH KEMASKINI</ion-label>
+        <ion-input>{{notify.f110lastupdatedby}}</ion-input>
+      </ion-item>
+    <div class="ion-padding">
+      <ion-button expand="block" (click)="notifyComment(notify.f110broadcastid)">Lihat Komen</ion-button>
+    </div>
+</ion-card>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/notify-detail/{{id}}"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Senarai Komen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+    <ion-fab horizontal="end" vertical="top" slot="fixed">
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+<div class = "ion-padding"></div>
+    <ion-card>
+      <ion-item-sliding>
+        <ion-item *ngFor = "let nc of notifycomment">
+            <ion-label>
+              <h2>{{ nc.f110replytext }}</h2>
+              <div></div>
+              <p>
+                Komen Oleh : {{ nc.user }}
+              <p>
+            </ion-label>
+        </ion-item>
+          <ion-item-options side="end">
+              <ion-item-option color="primary">Kemaskini</ion-item-option>
+              <ion-item-option color="danger">Padam</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-card>
+</ion-content>

@@ -2,7 +2,6 @@ import { ReportingService } from './../service/reporting/reporting.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { Reporting } from '../reporting';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
@@ -16,7 +15,6 @@ export class Tab4Page implements OnInit {
               public loadingController: LoadingController,
               private iab: InAppBrowser) { }
 
-  // reporting: Reporting[] = [];
   reporting: any;
   url: any;
 

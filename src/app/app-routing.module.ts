@@ -15,8 +15,16 @@ const routes: Routes = [
     loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule)
   },
   {
-    path: 'openedshelters-detail/:shelters',
+    path: 'openedshelters-detail/:shelter',
     loadChildren: () => import('./openedshelters-detail/openedshelters-detail.module').then( m => m.OpenedsheltersDetailPageModule)
+  },
+  {
+    path: 'notify-detail/:id',
+    loadChildren: () => import('./notify-detail/notify-detail.module').then( m => m.NotifyDetailPageModule)
+  },
+  {
+    path: 'notify-comment/:id',
+    loadChildren: () => import('./notify-comment/notify-comment.module').then( m => m.NotifyCommentPageModule)
   }
 ];
 @NgModule({

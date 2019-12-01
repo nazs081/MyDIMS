@@ -1,8 +1,19 @@
 <ion-content fullscreen class="ion-padding">
   <div class = "ion-padding"></div>
   <div class = "ion-padding"></div>
-  <ion-list-header>Announcement</ion-list-header>
+  <ion-list-header>SENARAI HEBAHAN</ion-list-header>
   <div class = "ion-padding"></div>
   <div class = "ion-padding"></div>
 
+  <ion-list>
+    <ion-item *ngFor = "let nots of notify" href="/notify-detail/{{nots.f110broadcastid}}" >
+      <ion-label class="item-padding">
+        <h2>{{ nots.f110title }}</h2>
+        <div></div>
+        <p>
+          Hebahan Oleh : {{ nots.f110createdby }}
+        <p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

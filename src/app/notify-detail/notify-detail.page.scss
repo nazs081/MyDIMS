@@ -1,3 +1,12 @@
+.my-label {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.item-padding {
+  padding-bottom: 13px;
+}
+
 ion-label > h2 {
   font-weight: bolder;
 }
@@ -12,8 +21,4 @@ ion-icon {
 ion-list-header {
   font-weight: bolder;
   font-size: 18px;
-}
-
-.item-padding {
-  padding-bottom: 13px;
 }

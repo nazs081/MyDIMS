@@ -9,7 +9,7 @@ const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json",
                           "Authorization": "MyDIMSToken_2f788d589cd6ed64b1952b948b5573acded39ad0" })
 };
-const apiUrl = 'https://mydims.nadma.gov.my/Modules/Services/situation_report.php? op=list&limitcount=4';
+const apiUrl = 'https://mydims.nadma.gov.my/Modules/Services/situation_report.php?op=list&limitcount=4';
 
 @Injectable({
   providedIn: 'root'
