@@ -3,8 +3,42 @@
   font-size: 0.8em;
 }
 
+.full-width {
+  width: 70%;
+}
+
+
 .item-padding {
-  padding-bottom: 13px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+
+}
+
+.list-padding {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+
+}
+
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.comment-box {
+     padding-top: 10px;
+     overflow: scroll;
+     height: 220px;
+     background-color: #E7E7E5;
+     border-radius: 10px;
+}
+
+.post-box {
+     border-radius: 5px;
+     border-style: solid;
+     border-width: 0.1px;
+     border-color: black;
 }
 
 ion-label > h2 {
@@ -21,4 +55,10 @@ ion-icon {
 ion-list-header {
   font-weight: bolder;
   font-size: 18px;
+}
+
+ion-list {
+  //padding:3px;
+   --ion-background-color: #E7E7E5;
+  //background: blue;
 }

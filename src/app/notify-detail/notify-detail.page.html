@@ -1,38 +1,56 @@
 <ion-content fullscreen class="ion-padding">
     <ion-list-header>PERINCIAN HEBAHAN</ion-list-header>
 
-    <ion-card lines="full" class="ion-margin ion-padding">
-      <ion-item class="item-padding">
-        <ion-label class="my-label" position="stacked">TAJUK HEBAHAN</ion-label>
-        <ion-input>{{notify.f110title}}</ion-input>
-      </ion-item>
-
-      <ion-item class="item-padding">
-        <ion-label class="my-label" position="stacked">HURAIAN HEBAHAN</ion-label>
-        <ion-input>{{notify.f110broadcasttext}}</ion-input>
-      </ion-item>
-
-      <ion-item class="item-padding">
-        <ion-label class="my-label" position="stacked">HEBAHAN OLEH</ion-label>
-        <ion-input>{{notify.f110createdon}}</ion-input>
-      </ion-item>
-
-      <ion-item class="item-padding">
-        <ion-label class="my-label" position="stacked">TARIKH HEBAHAN</ion-label>
-        <ion-input>{{notify.f110createdby}}</ion-input>
-      </ion-item>
-
-      <ion-item class="item-padding">
-        <ion-label class="my-label" position="stacked">DIKEMASKINI OLEH</ion-label>
-        <ion-input>{{notify.f110lastupdatedon}}</ion-input>
-      </ion-item>
-
-      <ion-item class="item-padding">
-        <ion-label class="my-label" position="stacked">TARIKH KEMASKINI</ion-label>
-        <ion-input>{{notify.f110lastupdatedby}}</ion-input>
-      </ion-item>
-    <div class="ion-padding">
-      <ion-button expand="block" (click)="notifyComment(notify.f110broadcastid)">Lihat Komen</ion-button>
-    </div>
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Perkara</ion-card-subtitle>
+    <ion-card-title>{{notify.f110title}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-row>
+      <ion-col size="4">Keterangan </ion-col>
+      <ion-col size="1">:</ion-col>
+      <ion-col size="7">{{notify.f110broadcasttext}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">Oleh</ion-col>
+      <ion-col size="1">:</ion-col>
+      <ion-col size="7">{{notify.f110createdon}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">Tarikh</ion-col>
+      <ion-col size="1">:</ion-col>
+      <ion-col size="7">{{notify.f110createdby}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">Dikemaskini Oleh</ion-col>
+      <ion-col size="1">:</ion-col>
+      <ion-col size="7">{{notify.f110lastupdatedon}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">Dikemaskini Pada</ion-col>
+      <ion-col size="1">:</ion-col>
+      <ion-col size="7">{{notify.f110lastupdatedby}}</ion-col>
+    </ion-row>
+  </ion-card-content>
 </ion-card>
+  <div class="ion-padding"></div>
+  <div class="comment-box">
+    <ion-list>
+      <h4>KOMEN</h4>
+        <ion-label class="list-padding" *ngFor = "let nc of notifycomment">
+          <h2>{{ nc.f110replytext }}</h2>
+          <p>
+           {{ nc.f110replyon }} reply
+          <p>
+        </ion-label>
+    </ion-list>
+  </div>
+
+<ion-item class="post-box">
+  <form [formGroup]="addComment" (ngSubmit)="onFormSubmit()">
+    <ion-input  type="text" placeholder="Masukkan Komen Anda " formControlName="replytext"></ion-input>
+    <button type="submit" color="primary" clear item-right>POST</button>
+  </form>
+</ion-item>
 </ion-content>
