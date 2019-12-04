@@ -8,13 +8,12 @@ import { Comment } from './../../comment';
 
 // Set the http options
 const httpOptions = {
-  headers: new HttpHeaders({ "Accept":"application/json", "Content-Type": "application/json",
+  headers: new HttpHeaders({ "Content-Type": "application/json",
                           "Authorization": "MyDIMSToken_2f788d589cd6ed64b1952b948b5573acded39ad0" })
 };
 
 const httpOptions_POST = {
-  headers: new HttpHeaders({ "Accept":"application/x-www-form-urlencoded",
-                             "Content-Type": "application/x-www-form-urlencoded",
+  headers: new HttpHeaders({ "Content-Type": "form-data",
                              "Authorization": "MyDIMSToken_2f788d589cd6ed64b1952b948b5573acded39ad0" })
 };
 
@@ -61,11 +60,11 @@ export class NotifyService {
     );
   }
 
-  postComment(comment: Comment): Observable<Comment> {
+  postComment(comment: Comment): Observable<any> {
     console.log(comment);
-    return this.http.post<Comment>(apiURLPOST, comment, httpOptions_POST)
+    return this.http.post<Comment>(apiURLPOST, comment, httpOptions)
       .pipe(
-       catchError(this.handleError<Comment>('addComment'))
+       catchError(this.handleError<Comment[]>('addComment'))
   );
   }
 
