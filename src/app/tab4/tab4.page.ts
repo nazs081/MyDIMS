@@ -41,9 +41,9 @@ export class Tab4Page implements OnInit {
   launchURL(link)
   {
 
-    this.url = `https://mydims.nadma.gov.my/Modules/Reports/LaporanTerkini/publicview.php?idLaporan=${link}&type=pdf`;
+    this.url = `https://mydims.nadma.gov.my/Modules/Reports/LaporanTerkini/publicview.php?idlaporan=${link}&type=pdf`;
     console.log(this.url);
-    this.iab.create(this.url,'_system','location=no');
+    this.iab.create(this.url);
   }
 
 }
