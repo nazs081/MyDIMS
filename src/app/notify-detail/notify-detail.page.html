@@ -1,6 +1,14 @@
-<ion-content fullscreen class="ion-padding">
-    <ion-list-header>PERINCIAN HEBAHAN</ion-list-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab3" [text]="''" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-list-header>HEBAHAN</ion-list-header>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content fullscreen class="ion-padding">
+<ion-list-header>PERINCIAN HEBAHAN</ion-list-header>
 <ion-card>
   <ion-card-header>
     <ion-card-subtitle>Perkara</ion-card-subtitle>
@@ -39,18 +47,34 @@
     <ion-list>
       <h4>KOMEN</h4>
         <ion-label class="list-padding" *ngFor = "let nc of notifycomment">
-          <h2>{{ nc.f110replytext }}</h2>
-          <p>
-           {{ nc.f110replyon }} reply
-          <p>
-        </ion-label>
+          <ion-row class="comment-dec">
+            <ion-col>  <h2>{{ nc.f110replytext }}</h2></ion-col>
+          </ion-row>
+          <ion-row class="comment-update">
+            <ion-col>{{ nc.f110replyon }}</ion-col>
+          </ion-row>
+          <ion-row class="comment text-primary">
+            <ion-col size="2.6">Kemaskini</ion-col>
+            <ion-col size="0.5">.</ion-col>
+            <ion-col size="2" (click) = "deleteComment(nc.f110replyid, '8912')" >Padam</ion-col>
+          </ion-row>
+      </ion-label>
     </ion-list>
+    <ion-row class="comment text-primary">
+      <ion-col (click)="hide()">Tambah Komen</ion-col>
+    </ion-row>
   </div>
 
-<ion-item class="post-box">
+<div *ngIf="hideMe">
   <form [formGroup]="addComment" (ngSubmit)="onFormSubmit()">
-    <ion-input  type="text" placeholder="Masukkan Komen Anda " formControlName="replytext"></ion-input>
-    <button type="submit" color="primary" clear item-right>POST</button>
+    <ion-row>
+        <ion-col size="10">
+          <ion-input position="stacked" type="text" placeholder=" " formControlName="replytext"></ion-input>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button size="small" type="submit" color="primary" clear item-right>POST</ion-button>
+        </ion-col>
+    </ion-row>
   </form>
-</ion-item>
+</div>
 </ion-content>

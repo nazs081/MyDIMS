@@ -1,5 +1,6 @@
 export class Comment {
   uidtoken: string;
-  _f110broadcastid: string;
+  f110broadcastid: string;
   replytext: string;
+  f110replyid: string;
 }

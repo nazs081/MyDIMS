@@ -1,29 +1,76 @@
-<ion-tabs>
+<!-- <super-tabs activeTabIndex="1" [config]="{ debug: false, sideMenu: 'left', allowElementScroll: true }">
+  <super-tabs-toolbar slot="top">
+    <super-tab-button>
+      <ion-icon name="navigate"></ion-icon>
+      <ion-label>Peta</ion-label>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Pemindahan</ion-label>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="volume-high"></ion-icon>
+      <ion-label>Hebahan</ion-label>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="paper"></ion-icon>
+      <ion-label>Pelaporan</ion-label>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Profil</ion-label>
+    </super-tab-button>
+  </super-tabs-toolbar>
 
-  <ion-tab-bar slot="bottom">
+  <super-tabs-container>
+    <super-tab>
+      <ion-content class="ion-padding">
+        This is home 1
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-nav [root]="tab1"></ion-nav>
+    </super-tab>
+    <super-tab>
+      <ion-nav [root]="tab2"></ion-nav>
+    </super-tab>
+    <super-tab>
+      <ion-nav [root]="tab3"></ion-nav>
+    </super-tab>
+    <super-tab>
+      <ion-nav [root]="tab4"></ion-nav>
+    </super-tab>
+    <super-tab>
+      <ion-nav [root]="tab5"></ion-nav>
+    </super-tab>
+  </super-tabs-container>
+</super-tabs> -->
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom" [translucent]="true" >
     <ion-tab-button tab="tab1">
       <ion-icon name="navigate"></ion-icon>
-      <ion-label>Disaster Map</ion-label>
+      <ion-label>Peta</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab2">
       <ion-icon name="home"></ion-icon>
-      <ion-label>Shelter</ion-label>
+      <ion-label>Pemindahan</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab3">
       <ion-icon name="volume-high"></ion-icon>
-      <ion-label>Announcement</ion-label>
+      <ion-label>Hebahan</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab4">
       <ion-icon name="paper"></ion-icon>
-      <ion-label>Reporting</ion-label>
+      <ion-label>Pelaporan</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab5">
       <ion-icon name="person"></ion-icon>
-      <ion-label>Profile</ion-label>
+      <ion-label>Profil</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 

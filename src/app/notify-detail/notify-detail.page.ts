@@ -17,6 +17,7 @@ export class NotifyDetailPage implements OnInit {
 
   addComment: FormGroup;
   id: string;
+  hideMe: boolean;
 
   constructor(public apinotify: NotifyService,
               public alertController: AlertController,
@@ -25,7 +26,7 @@ export class NotifyDetailPage implements OnInit {
               private formBuilder: FormBuilder) {
                 this.id = this.route.snapshot.paramMap.get('id');
                 this.addComment = this.formBuilder.group({
-                                      'uidtoken': '8912aadasdaasasdadassd',
+                                      'uidtoken': '8912',
                                       'f110broadcastid': this.id,
                                       'replytext' : ''
                                     });
@@ -78,10 +79,23 @@ export class NotifyDetailPage implements OnInit {
   await this.apinotify.postComment(this.addComment.value)
   .subscribe(res => {
        console.log("Comment posted");
+       this.hideMe = false;
     }, (err) => {
       console.log(err);
     });
 }
+
+  async deleteComment(id, token) {
+    this.isLoadingResults = true;
+    await this.apinotify.deleteComment(id, token)
+      .subscribe(res => {
+        this.isLoadingResults = false;
+        this.router.navigate([ '/notify-detail', this.id ]);
+      }, err => {
+        console.log(err);
+        this.isLoadingResults = false;
+      });
+  }
 
   async presentAlertConfirm(msg: string) {
     const alert = await this.alertController.create({
@@ -104,9 +118,8 @@ export class NotifyDetailPage implements OnInit {
     this.getNotifyComment();
   }
 
-  notifyComment(id: any) {
-  this.router.navigate([ '/notify-comment', id ]);
-
-  }
+  hide() {
+  this.hideMe = true;
+}
 
 }

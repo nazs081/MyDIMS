@@ -1,1 +1,14 @@
+ion-tab-bar {
+    // Translucent positioning effect
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 
+:host {
+  --st-base-color-inactive: rgba(255,255,255,0.4);
+  --st-base-color-active: var(--ion-color-secondary);
+  --st-icon-color-active: var(--ion-color-secondary-tint);
+  --st-indicator-color: var(--ion-color-secondary-tint);
+}

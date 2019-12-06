@@ -7,6 +7,18 @@
   width: 70%;
 }
 
+.comment {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.comment-dec {
+  font-size: 0.9em;
+}
+
+.comment-update {
+  font-size: 0.6em;
+}
 
 .item-padding {
   padding-bottom: 3px;
@@ -35,7 +47,7 @@
 }
 
 .post-box {
-     border-radius: 5px;
+     border-radius: 3px;
      border-style: solid;
      border-width: 0.1px;
      border-color: black;
@@ -61,4 +73,11 @@ ion-list {
   //padding:3px;
    --ion-background-color: #E7E7E5;
   //background: blue;
+}
+
+ion-input {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 0.1px;
+  background-color: #F6F7F9;;
 }
