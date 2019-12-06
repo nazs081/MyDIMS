@@ -1,10 +1,15 @@
-.my-label {
-  font-weight: bold;
-  font-size: 0.8em;
+ion-toolbar {
+--background: transparent;
+--ion-color-base: transparent !important;
 }
 
-.full-width {
-  width: 70%;
+.background {
+  --ion-background-color: #3485BF;
+}
+
+.my-label {
+  // font-weight: bold;
+  font-size: 1.0em;
 }
 
 .comment {
@@ -17,7 +22,7 @@
 }
 
 .comment-update {
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
 
 .item-padding {
@@ -42,7 +47,7 @@
      padding-top: 10px;
      overflow: scroll;
      height: 220px;
-     background-color: #E7E7E5;
+     // background-color: #E7E7E5;
      border-radius: 10px;
 }
 
@@ -51,6 +56,28 @@
      border-style: solid;
      border-width: 0.1px;
      border-color: black;
+}
+
+.detail-card {
+    background: #ffffff;
+    border: none !important;
+    // border: 2px solid color(#4a4a4a);
+
+}
+.detail-info {
+    background: #4a4a4a;
+    font-size: 0.9em;
+    border: none !important;
+
+}
+
+ion-card, .card-ios, .card-md {
+  border: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-style: none !important;
+  position: relative;
+  text-align: center;
 }
 
 ion-label > h2 {
@@ -64,15 +91,15 @@ div{
 ion-icon {
   padding-right: 5px;
 }
+
 ion-list-header {
   font-weight: bolder;
   font-size: 18px;
 }
 
-ion-list {
-  //padding:3px;
-   --ion-background-color: #E7E7E5;
-  //background: blue;
+ion-card-header {
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 ion-input {

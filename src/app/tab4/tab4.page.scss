@@ -1,3 +1,12 @@
+ion-toolbar {
+--background: transparent;
+--ion-color-base: transparent !important;
+}
+
+.background {
+  --ion-background-color: #3485BF;
+}
+
 ion-label > h2 {
   font-weight: bolder;
 }

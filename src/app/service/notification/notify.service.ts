@@ -72,6 +72,19 @@ export class NotifyService {
   );
   }
 
+ //  editComment(editcomment: NotifyComment): Observable<NotifyComment> {
+ //    let params = new HttpParams()
+ //              .append('f110broadcastid',editcomment.f110broadcastid)
+ //              .append('uidtoken',editcomment.uidtoken)
+ //              .append('replytext',editcomment.replytext)
+ //              .toString();
+ //    const urlPOST = `${apiUrldetail}op=reply_edit`;
+ //    return this.http.post<any>(urlPOST, params, httpOptions_POST )
+ //      .pipe(
+ //       catchError(this.handleError<NotifyComment[]>('editComment'))
+ //  );
+ // }
+
   deleteComment(id, token): Observable<any> {
     let params = new HttpParams()
               .append('f110replyid',id)

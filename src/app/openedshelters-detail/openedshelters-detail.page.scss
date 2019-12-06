@@ -1,9 +1,18 @@
+ion-toolbar {
+--background: transparent;
+--ion-color-base: transparent !important;
+}
+
+.background {
+  --ion-background-color: #3485BF;
+}
+
 .example-container {
   position: relative;
   //padding: 3px;
   width: auto;
   height: auto;
-  // background-color: grey;
+  background-color: white;
 }
 
 .example-loading-shade {

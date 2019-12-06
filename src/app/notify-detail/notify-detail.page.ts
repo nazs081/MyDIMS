@@ -85,6 +85,17 @@ export class NotifyDetailPage implements OnInit {
     });
 }
 
+  // async onFormEditSubmit(){
+  // await this.apinotify.editComment(this.editComment.value)
+  // .subscribe(res => {
+  //      console.log("Comment edited posted");
+  //      // this.hideMe = false;
+  //   }, (err) => {
+  //     console.log(err);
+  //   });
+  // }
+
+
   async deleteComment(id, token) {
     this.isLoadingResults = true;
     await this.apinotify.deleteComment(id, token)
@@ -120,6 +131,6 @@ export class NotifyDetailPage implements OnInit {
 
   hide() {
   this.hideMe = true;
-}
+  }
 
 }

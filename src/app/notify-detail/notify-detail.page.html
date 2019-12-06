@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar class="background">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/tab3" [text]="''" color="dark"></ion-back-button>
     </ion-buttons>
@@ -7,64 +7,41 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen class="ion-padding">
-<ion-list-header>PERINCIAN HEBAHAN</ion-list-header>
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Perkara</ion-card-subtitle>
-    <ion-card-title>{{notify.f110title}}</ion-card-title>
-  </ion-card-header>
+<ion-content fullscreen class="ion-padding background">
+  <ion-card class="detail-card">
+  <ion-card-header>{{notify.f110title}}</ion-card-header>
   <ion-card-content>
-    <ion-row>
-      <ion-col size="4">Keterangan </ion-col>
-      <ion-col size="1">:</ion-col>
-      <ion-col size="7">{{notify.f110broadcasttext}}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="4">Oleh</ion-col>
-      <ion-col size="1">:</ion-col>
-      <ion-col size="7">{{notify.f110createdon}}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="4">Tarikh</ion-col>
-      <ion-col size="1">:</ion-col>
-      <ion-col size="7">{{notify.f110createdby}}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="4">Dikemaskini Oleh</ion-col>
-      <ion-col size="1">:</ion-col>
-      <ion-col size="7">{{notify.f110lastupdatedon}}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="4">Dikemaskini Pada</ion-col>
-      <ion-col size="1">:</ion-col>
-      <ion-col size="7">{{notify.f110lastupdatedby}}</ion-col>
-    </ion-row>
+    {{notify.f110broadcasttext}}
   </ion-card-content>
-</ion-card>
-  <div class="ion-padding"></div>
-  <div class="comment-box">
-    <ion-list>
-      <h4>KOMEN</h4>
-        <ion-label class="list-padding" *ngFor = "let nc of notifycomment">
-          <ion-row class="comment-dec">
-            <ion-col>  <h2>{{ nc.f110replytext }}</h2></ion-col>
-          </ion-row>
-          <ion-row class="comment-update">
-            <ion-col>{{ nc.f110replyon }}</ion-col>
-          </ion-row>
-          <ion-row class="comment text-primary">
-            <ion-col size="2.6">Kemaskini</ion-col>
-            <ion-col size="0.5">.</ion-col>
-            <ion-col size="2" (click) = "deleteComment(nc.f110replyid, '8912')" >Padam</ion-col>
-          </ion-row>
-      </ion-label>
-    </ion-list>
-    <ion-row class="comment text-primary">
-      <ion-col (click)="hide()">Tambah Komen</ion-col>
-    </ion-row>
-  </div>
 
+  <ion-item class="my-label">
+      Tarikh : {{notify.f110createdon | date: 'dd/MM/yyyy' }}
+  </ion-item>
+
+  <ion-item class="my-label">
+    Hebahan : {{notify.f110createdby}}
+  </ion-item>
+</ion-card>
+  <div class="ion-padding">
+    <ion-list-header>Komen Sukarelawan</ion-list-header>
+  </div>
+  <div class="comment-box">
+    <ion-item *ngFor = "let nc of notifycomment; let i = index">
+      <ion-icon slot="end" name="create" color="warning"></ion-icon>
+      <ion-icon slot="end" name="trash" color="warning" (click) = "deleteComment(nc.f110replyid, '8912')"></ion-icon>
+      <ion-label class="ion-text-wrap">
+        <ion-text>
+          <h2>{{ nc.f110replytext }}</h2>
+        </ion-text>
+        <p class="comment-update">{{ nc.f110replyon }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-fab (click)="hide()" horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="warning">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>
 <div *ngIf="hideMe">
   <form [formGroup]="addComment" (ngSubmit)="onFormSubmit()">
     <ion-row>
